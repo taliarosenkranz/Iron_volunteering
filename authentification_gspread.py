@@ -5,20 +5,10 @@ import os
 import urllib.parse as up
 import requests
 
-
-# Use creds to create a client to interact with the Google Drive API
-
+#creating connection to db elephant
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('/Users/taliarosenkranz/Documents/Developers_Institute/DI_bootcamp_github/Hackathon/iron_volunteering/google_api_key.json', scope)
 client = gspread.authorize(creds)
-sheet = client.open("Volunteers (Responses)").sheet1
-data = sheet.get_all_records()
-
-
-print(data)
-print('##################')
-
-
 
 up.uses_netloc.append("postgres")
 DATABASE_URL = 'postgres://dpcrpkft:oWD6EIHE9BHR7GzSktVfCw7FXZ1CX6Lr@castor.db.elephantsql.com/dpcrpkft'
@@ -29,16 +19,30 @@ password=url.password,
 host=url.hostname,
 port=url.port
 )
+
 cur = conn.cursor()
 
-# Assuming your table schema and form align perfectly
-# Adapt the INSERT statement according to your table's schema
-insert_query = 'INSERT INTO volunteers (name, last_name, email, phone) VALUES (%s, %s, %s, %s)'
+#functions are called in insert_data.py file
+def pull_data_from_sheets(sheet_name):
+    sheet = client.open(sheet_name).sheet1 #name of google sheets created through forms
+    #sheet_volunteers = client.open("Volunteers (Responses)").sheet1 #name of google sheets created through forms
+    data = sheet.get_all_records()
+    print(data)
+    return data
 
-for item in data:
-    values = (item['first name'], item['last name'], item['email'], item['phone']) 
-    cur.execute(insert_query, values)
+def insert_data(table_name, column_table_names, column_sheet_names, data_row, cursor = cur):
+    #inserting data from sheets to db table
+    placeholders = ', '.join(['%s'] * len(column_table_names)) # %s placeholders for sql query values
+    column_table_names_str = ', '.join(column_table_names) #transfers from list values to one long string
+    insert_query = f'INSERT INTO {table_name} ({column_table_names_str}) VALUES ({placeholders})' #SQL Query
 
-conn.commit()  # Commit the transaction
-cur.close()
-conn.close()
+    for item in data_row:
+        # Extracting values in the order of column names in sheets saving in tuple variable 
+        values = tuple(item[col] for col in column_sheet_names) 
+        cursor.execute(insert_query, values)
+
+
+
+ 
+
+
