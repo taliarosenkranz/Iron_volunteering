@@ -1,0 +1,4 @@
+on MAC: to activate iron_volunteering virtual environment: 
+--> source iron_volunteering/bin/activate
+
+on WINDOWS: iron_volunteering\Scripts\activate
