@@ -1,0 +1,6 @@
+gspread
+psycopg2
+psycopg2-binary
+streamlit
+folium
+streamlit_folium

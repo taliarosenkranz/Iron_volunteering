@@ -1,4 +1,8 @@
-from authentification_gspread import pull_data_from_sheets, insert_data, cur, conn
+from authentification_gspread import pull_data_from_sheets, insert_data, connection_elephant_db
+
+#creates connection to db
+conn = connection_elephant_db()
+cur = conn.cursor() # always need this after calling connection_elephant function
 
 #pull data from sheets
 data_volunteers = pull_data_from_sheets("Volunteers (Responses)") #variable referred to as data_row in insert_data func
@@ -7,7 +11,7 @@ data_volunteers = pull_data_from_sheets("Volunteers (Responses)") #variable refe
 #data_volunteers = pull_data_from_sheets("login (Responses)")
 
 table_volunteers = insert_data(
-    #cursor=cur, 
+    cur=cur, 
     table_name='volunteers', 
     column_table_names=['name', 'last_name', 'email', 'phone'], 
     column_sheet_names = ['first name','last name', 'email', 'phone'],
