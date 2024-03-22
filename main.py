@@ -13,10 +13,19 @@ def main(): #landing page
     choice = st.sidebar.selectbox("Select Role", menu)
 
     if choice == "Volunteer":
-        #log in page for volunteers
-        st.subheader("Log in as a volunteer if you have an account")
-        log_in("Volunteers")
+        st.subheader("Hi Volunteer!")
+        st.write("Do you already have an account?")
+        st.write("Do you want to register to see volunteering options and their demand?")
+        if st.button("Login"):
+            log_in("Volunteers")
+        elif st.button("Register"):
+            st.write("Do you want to register to see volunteering options and their demand?")
+            # CALL FUNCTION FOR REGISTRATION
+            pass
       
+
+        
+
     else:
         st.subheader("Log in as an organization if you have an account")
         login_organization = log_in("organizations") #entering table name for query in the function
