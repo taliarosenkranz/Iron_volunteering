@@ -10,5 +10,4 @@ data = pull_data_from_table(query)
 
 #displaying data in Streamlit
 st.title("Volunteering options")
-
 st.dataframe(data)
