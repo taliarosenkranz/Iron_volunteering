@@ -7,3 +7,5 @@ on WINDOWS: iron_volunteering\Scripts\activate
 
 To install the requirements (must be in iron_volunteering folder directory): 
 - pip install -r requirements.txt
+
+to run application: streamlit run main.py

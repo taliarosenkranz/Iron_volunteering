@@ -13,7 +13,7 @@ data_volunteers = pull_data_from_sheets("Volunteers (Responses)") #variable refe
 table_volunteers = insert_data(
     cur=cur, 
     table_name='volunteers', 
-    column_table_names=['name', 'last_name', 'email', 'phone'], 
+    column_table_names=['v_name', 'last_name', 'v_email', 'v_phone'], 
     column_sheet_names = ['first name','last name', 'email', 'phone'],
     data_row=data_volunteers
 )

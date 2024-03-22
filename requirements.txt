@@ -4,3 +4,4 @@ psycopg2-binary
 streamlit
 folium
 streamlit_folium
+bcrypt

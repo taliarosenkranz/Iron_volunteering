@@ -7,7 +7,7 @@ cur = conn.cursor()
 
 def qury_table(table_name):
     #query = f'SELECT * FROM {table_name}'
-    query = f'SELECT name, num_volunteers as "available spots", address,phone, email, url as Website, description FROM organizations {table_name}'
+    query = f'SELECT org_name as Name, num_volunteers as "available spots", address, org_phone, org_email, url as Website, description FROM organizations {table_name}'
     return query
 
 def pull_data_from_table(query): #data of all signed up organization to be displayed in UI
