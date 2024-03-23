@@ -28,7 +28,7 @@ def pull_data_from_sheets(sheet_name):
     sheet = client.open(sheet_name).sheet1 #name of google sheets created through forms
     #sheet_volunteers = client.open("Volunteers (Responses)").sheet1 #name of google sheets created through forms
     data = sheet.get_all_records()
-    print(data)
+   #print(data)
     return data
 
 def insert_data(table_name, column_table_names, column_sheet_names, data_row, cur):
