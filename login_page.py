@@ -29,6 +29,8 @@ def check_user(username,password, table_name):
             stored_password = user_record[0] #saving password from db in this variable
             if stored_password == password: 
                 print("password match")
+                #cur.close()
+                #conn.close()
                 return True
             else:
                 print("passwords are not matching")
@@ -43,9 +45,10 @@ def check_user(username,password, table_name):
     except Exception as e:
         print(f'An error occured {e}')
 
-    finally:    
-        cur.close()
-        conn.close()
+    finally:  
+        print("done checking user")
+        #cur.close()
+        #conn.close()
 
 def log_in(table_name):
     
@@ -56,7 +59,7 @@ def log_in(table_name):
     
     username = st.text_input("Username", key="usern")
     password = st.text_input("Password", key="psw", type='password')
-    
+    print(password)
 
     if st.button('Login', key= "login button") and not st.session_state.logged_in:
         st.session_state.login_attempted = True

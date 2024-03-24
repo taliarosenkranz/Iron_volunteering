@@ -13,7 +13,8 @@ def qury_table(table_name): #WHICH TABLE
     return query
 
 def query_user_history(username, selected_date):
-    query = f"SELECT date, organization_name FROM volunteers_per_day WHERE user_name = '{username}' and date = '{selected_date}'"
+    #query = f"SELECT date, organization_name FROM volunteers_per_day WHERE user_name = '{username}' and date = '{selected_date}'"
+    query = f"SELECT date, organization_name FROM volunteers_per_day WHERE user_name = '{username}'"
     print(query)
     return query
 def pull_data_from_table(query): #data of all signed up organization displayed in UI of volunteers page

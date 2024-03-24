@@ -10,10 +10,12 @@ from authentification_gspread import pull_data_from_sheets, insert_data, connect
 
 #page to choose if volunteer or organization
 def main(): #landing page
+    st.title("Iron Volunteering")
+
     st.subheader("Help out where you are needed most")
 
     menu = ["Volunteer", "Organization"]
-    choice = st.sidebar.selectbox("Select Role", menu)
+    choice = st.sidebar.selectbox("Select Role", menu)  
     
     st.write("Do you already have an account? Then Login! If you're new here, welcome! Click Register")
 
@@ -70,7 +72,7 @@ def main(): #landing page
             print("done updating date_schedule")
             
             print("done calling available spots function")
-        #update table with lat long 
+            #update table with lat long 
             print("calling the long_lat function")
             long_lat_add()
             print("lat long func done")

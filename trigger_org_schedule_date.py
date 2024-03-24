@@ -14,8 +14,8 @@ def update_date_schedule():
         organizations = cur.fetchall()
         print("SQL organizations run successful")
         # Iterate over each day of 2024
-        current_date = datetime(2024, 1, 1)
-        end_date = datetime(2024, 1, 31)
+        current_date = datetime(2024, 3,23)
+        end_date = datetime(2024, 3, 25)
         while current_date <= end_date:
             # Iterate over each organization
             for org_id, num_volunteers in organizations:

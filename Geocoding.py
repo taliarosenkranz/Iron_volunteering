@@ -47,4 +47,4 @@ def long_lat_add():
     finally:
         cur.close()
         conn.close()
-long_lat_add()
+#long_lat_add()
