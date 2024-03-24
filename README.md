@@ -10,4 +10,5 @@ Organizations that want to be displayed on our map can create an account and wil
 
  💙 Ariel & Talia  🤍
 
- 
+ Partial Demo of the platform:
+ https://www.loom.com/share/1007a7c504fd422f9dde3387a886be06?sid=f103284f-1cbf-4d06-ba68-1125b4840565
