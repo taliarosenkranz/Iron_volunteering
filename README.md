@@ -13,7 +13,9 @@ Organizations that want to be displayed on our map can create an account and wil
 1. pip install -r requirements.txt
 2. Generate google api secret key 
 3. In authentication_gspread.py file, exchange 'creds' variable with path to where secret key is saved. 
---> creds = ServiceAccountCredentials.from_json_keyfile_name('your_path_here/google_api_key.json', scope)
+````creds = ServiceAccountCredentials.from_json_keyfile_name('your_path_here/google_api_key.json', scope)````
+4. to run application: 
+ ````streamlit run main.py````
 
 
  💙 Ariel & Talia  🤍
