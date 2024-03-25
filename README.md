@@ -8,7 +8,17 @@ By registering to our platform, volunteers can sign up right inside the app to t
 
 Organizations that want to be displayed on our map can create an account and will automatically pop up on the map, making them available for sign ups. When logged in, the organization can also see the details of the volunteers that are signed up to come by on any selected day.
 
+
+**To do when cloning the repo to run locally:**
+1. pip install -r requirements.txt
+2. Generate google api secret key 
+3. In authentication_gspread.py file, exchange 'creds' variable with path to where secret key is saved. 
+--> creds = ServiceAccountCredentials.from_json_keyfile_name('your_path_here/google_api_key.json', scope)
+
+
  💙 Ariel & Talia  🤍
 
- Partial Demo of the platform:
- https://www.loom.com/share/1007a7c504fd422f9dde3387a886be06?sid=f103284f-1cbf-4d06-ba68-1125b4840565
+Partial Demo of the platform:
+
+https://github.com/taliarosenkranz/Iron_volunteering/assets/85115270/40c15b37-671d-400e-b075-97056be24a79
+
