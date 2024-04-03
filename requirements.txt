@@ -1,6 +1,5 @@
-gspread
-psycopg2
-psycopg2-binary
+gspread==6.1.0
+psycopg2-binary==2.9.3
 streamlit
 folium
 streamlit_folium
