@@ -7,7 +7,7 @@ import requests
 
 #creating connection to google sheets
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('/Users/taliarosenkranz/Documents/Developers_Institute/DI_bootcamp_github/Hackathon/iron_volunteering/google_api_key.json', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('google_api_key.json', scope)
 client = gspread.authorize(creds)
 
 def connection_elephant_db():
